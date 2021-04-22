@@ -10,7 +10,7 @@ const client = {
             baseUrl: process.env.MATRIX_HOMESERVER_URL,
             accessToken: process.env.MATRIX_TOKEN,
             userId: process.env.MATRIX_USER,
-            localTimeoutMs: 10000,
+            localTimeoutMs: parseInt(process.env.APP_TIMEOUT),
         });
 
         // Ensure in right rooms

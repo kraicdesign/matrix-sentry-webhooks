@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  sentry:
+    container_name: webhook
+    image: docker.local/${CI_PROJECT_PATH}/webhook
+    volumes:
+      - ./.env:/.env
+    ports:
+      - ${DOCKER_IP}:3000:3000
+    env_file:
+      - .env
+    restart: always
