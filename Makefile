@@ -37,3 +37,7 @@ apply-env: ## Applies content of .env file to running docker container
 .PHONY: logs
 logs: ## Monitor docker logs
 	docker-compose logs -f
+
+.PHONY: bash
+bash: ## Open container bash
+	docker exec -it webhook bash
